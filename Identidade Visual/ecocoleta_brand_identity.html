@@ -1,0 +1,248 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
+  .brand-wrap { font-family: 'DM Sans', sans-serif; padding: 8px 0 28px; }
+  .blabel {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin: 0 0 14px;
+    display: block;
+  }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 28px 0; }
+
+  .palette-strip { display: flex; gap: 0; border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+  .sw {
+    flex: 1; height: 64px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 6px 9px; cursor: default;
+    transition: flex 0.18s;
+  }
+  .sw:hover { flex: 1.6; }
+  .sw-name { font-size: 10px; font-weight: 500; opacity: 0; transition: opacity 0.15s; line-height: 1.3; }
+  .sw:hover .sw-name { opacity: 1; }
+  .sw-hex { font-size: 10px; font-family: monospace; opacity: 0.65; }
+
+  .palette-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; margin-bottom: 0; }
+  .pl-item { display: flex; align-items: center; gap: 9px; }
+  .pl-dot { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; }
+  .pl-info { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+  .pl-info strong { display: block; font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+
+  .icons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .icon-card {
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: 16px;
+    padding: 24px 20px 20px;
+    background: var(--color-background-secondary);
+  }
+  .icon-sizes-row { display: flex; gap: 14px; align-items: flex-end; margin-bottom: 16px; }
+  .icon-info strong { display: block; font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .icon-info p { font-size: 12px; color: var(--color-text-secondary); line-height: 1.55; }
+
+  .usage-row { display: flex; gap: 8px; align-items: center; }
+  .usage-bg {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .usage-label { font-size: 10px; color: var(--color-text-tertiary); text-align: center; }
+
+  .type-row { display: flex; gap: 28px; align-items: baseline; margin-top: 8px; }
+  .type-sample { line-height: 1; }
+  .type-meta { font-size: 11px; color: var(--color-text-tertiary); }
+</style>
+
+<div class="brand-wrap">
+
+  <span class="blabel">Paleta de cores</span>
+
+  <div class="palette-strip">
+    <div class="sw" style="background:#0f1a14;">
+      <span class="sw-name" style="color:#3de88c;">Preto floresta</span>
+      <span class="sw-hex" style="color:#3de88c;">#0f1a14</span>
+    </div>
+    <div class="sw" style="background:#131e17;">
+      <span class="sw-name" style="color:#3de88c;">Superfície</span>
+      <span class="sw-hex" style="color:#3de88c;">#131e17</span>
+    </div>
+    <div class="sw" style="background:#0a120d;">
+      <span class="sw-name" style="color:#3de88c;">Fundo profundo</span>
+      <span class="sw-hex" style="color:#3de88c;">#0a120d</span>
+    </div>
+    <div class="sw" style="background:#1a7a4a;">
+      <span class="sw-name" style="color:#e8f7ef;">Verde primário</span>
+      <span class="sw-hex" style="color:#e8f7ef;">#1a7a4a</span>
+    </div>
+    <div class="sw" style="background:#2db06a;">
+      <span class="sw-name" style="color:#0f1a14;">Verde claro</span>
+      <span class="sw-hex" style="color:#0f1a14;">#2db06a</span>
+    </div>
+    <div class="sw" style="background:#3de88c;">
+      <span class="sw-name" style="color:#0f1a14;">Verde neon</span>
+      <span class="sw-hex" style="color:#0f1a14;">#3de88c</span>
+    </div>
+    <div class="sw" style="background:#e8f7ef; border: 0.5px solid rgba(0,0,0,0.06);">
+      <span class="sw-name" style="color:#1a7a4a;">Verde fundo</span>
+      <span class="sw-hex" style="color:#1a7a4a;">#e8f7ef</span>
+    </div>
+  </div>
+
+  <div class="palette-strip">
+    <div class="sw" style="background:#c4601a;">
+      <span class="sw-name" style="color:#faeeda;">Terra primário</span>
+      <span class="sw-hex" style="color:#faeeda;">#c4601a</span>
+    </div>
+    <div class="sw" style="background:#f5a04a;">
+      <span class="sw-name" style="color:#0f1a14;">Terra claro</span>
+      <span class="sw-hex" style="color:#0f1a14;">#f5a04a</span>
+    </div>
+    <div class="sw" style="background:#f5f9f6; border: 0.5px solid rgba(0,0,0,0.06);">
+      <span class="sw-name" style="color:#1a7a4a;">Branco</span>
+      <span class="sw-hex" style="color:#1a7a4a;">#f5f9f6</span>
+    </div>
+    <div class="sw" style="background:#8a9990;">
+      <span class="sw-name" style="color:#f5f9f6;">Cinza</span>
+      <span class="sw-hex" style="color:#f5f9f6;">#8a9990</span>
+    </div>
+    <div class="sw" style="background:#f0f4f2; border: 0.5px solid rgba(0,0,0,0.06);">
+      <span class="sw-name" style="color:#1a7a4a;">Cinza fundo</span>
+      <span class="sw-hex" style="color:#1a7a4a;">#f0f4f2</span>
+    </div>
+  </div>
+
+  <div class="palette-legend">
+    <div class="pl-item"><div class="pl-dot" style="background:#2db06a;"></div><div class="pl-info"><strong>Verde claro</strong>CTAs e botões primários</div></div>
+    <div class="pl-item"><div class="pl-dot" style="background:#3de88c;"></div><div class="pl-info"><strong>Verde neon</strong>Números e destaques dark</div></div>
+    <div class="pl-item"><div class="pl-dot" style="background:#f5a04a;"></div><div class="pl-info"><strong>Terra claro</strong>Empresas e contraste</div></div>
+    <div class="pl-item"><div class="pl-dot" style="background:#1a7a4a;"></div><div class="pl-info"><strong>Verde primário</strong>Seção de impacto</div></div>
+  </div>
+
+  <hr class="divider">
+  <span class="blabel">Ícone da marca — versão 1 (duas variantes)</span>
+
+  <div class="icons-grid">
+
+    <div class="icon-card">
+      <div class="icon-sizes-row">
+        <svg width="80" height="80" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="96" height="96" rx="22" fill="#2db06a"/>
+          <path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#0f1a14"/>
+          <path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#0f1a14"/>
+          <circle cx="48" cy="48" r="7" fill="#0f1a14"/>
+          <circle cx="48" cy="48" r="4" fill="#2db06a"/>
+        </svg>
+        <svg width="48" height="48" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="96" height="96" rx="22" fill="#2db06a"/>
+          <path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#0f1a14"/>
+          <path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#0f1a14"/>
+          <circle cx="48" cy="48" r="7" fill="#0f1a14"/>
+          <circle cx="48" cy="48" r="4" fill="#2db06a"/>
+        </svg>
+        <svg width="28" height="28" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="96" height="96" rx="22" fill="#2db06a"/>
+          <path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#0f1a14"/>
+          <path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#0f1a14"/>
+          <circle cx="48" cy="48" r="7" fill="#0f1a14"/>
+          <circle cx="48" cy="48" r="4" fill="#2db06a"/>
+        </svg>
+      </div>
+      <div class="icon-info">
+        <strong>Variante A — Verde claro</strong>
+        <p>Fundo #2db06a, símbolo em preto floresta. Versão principal para uso em fundos escuros, nav, app e materiais impressos.</p>
+      </div>
+      <hr style="border:none; border-top: 0.5px solid var(--color-border-tertiary); margin: 14px 0;">
+      <div style="font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 10px;">Usos</div>
+      <div class="usage-row">
+        <div>
+          <div class="usage-bg" style="background:#0f1a14;"><svg width="22" height="22" viewBox="0 0 96 96" fill="none"><path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#2db06a"/><path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#2db06a"/><circle cx="48" cy="48" r="7" fill="#2db06a"/><circle cx="48" cy="48" r="4" fill="#0f1a14"/></svg></div>
+          <div class="usage-label" style="margin-top:4px;">dark bg</div>
+        </div>
+        <div>
+          <div class="usage-bg" style="background:#2db06a; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 96 96" fill="none"><path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#0f1a14"/><path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#0f1a14"/><circle cx="48" cy="48" r="7" fill="#0f1a14"/><circle cx="48" cy="48" r="4" fill="#2db06a"/></svg></div>
+          <div class="usage-label" style="margin-top:4px;">verde bg</div>
+        </div>
+        <div>
+          <div class="usage-bg" style="background:#f5f9f6; border: 0.5px solid rgba(0,0,0,0.08); border-radius:10px;"><svg width="22" height="22" viewBox="0 0 96 96" fill="none"><path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#1a7a4a"/><path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#1a7a4a"/><circle cx="48" cy="48" r="7" fill="#1a7a4a"/><circle cx="48" cy="48" r="4" fill="#f5f9f6"/></svg></div>
+          <div class="usage-label" style="margin-top:4px;">claro</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-card">
+      <div class="icon-sizes-row">
+        <svg width="80" height="80" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="96" height="96" rx="22" fill="#0f1a14"/>
+          <path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#3de88c"/>
+          <path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#3de88c"/>
+          <circle cx="48" cy="48" r="7" fill="#3de88c"/>
+          <circle cx="48" cy="48" r="4" fill="#0f1a14"/>
+        </svg>
+        <svg width="48" height="48" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="96" height="96" rx="22" fill="#0f1a14"/>
+          <path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#3de88c"/>
+          <path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#3de88c"/>
+          <circle cx="48" cy="48" r="7" fill="#3de88c"/>
+          <circle cx="48" cy="48" r="4" fill="#0f1a14"/>
+        </svg>
+        <svg width="28" height="28" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="96" height="96" rx="22" fill="#0f1a14"/>
+          <path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#3de88c"/>
+          <path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#3de88c"/>
+          <circle cx="48" cy="48" r="7" fill="#3de88c"/>
+          <circle cx="48" cy="48" r="4" fill="#0f1a14"/>
+        </svg>
+      </div>
+      <div class="icon-info">
+        <strong>Variante B — Preto neon</strong>
+        <p>Fundo #0f1a14, símbolo em verde neon. Versão para contextos digitais, dark mode, notificações e elementos UI internos.</p>
+      </div>
+      <hr style="border:none; border-top: 0.5px solid var(--color-border-tertiary); margin: 14px 0;">
+      <div style="font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 10px;">Usos</div>
+      <div class="usage-row">
+        <div>
+          <div class="usage-bg" style="background:#131e17; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 96 96" fill="none"><path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#3de88c"/><path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#3de88c"/><circle cx="48" cy="48" r="7" fill="#3de88c"/><circle cx="48" cy="48" r="4" fill="#131e17"/></svg></div>
+          <div class="usage-label" style="margin-top:4px;">superfície</div>
+        </div>
+        <div>
+          <div class="usage-bg" style="background:#1a3325; border-radius:10px;"><svg width="22" height="22" viewBox="0 0 96 96" fill="none"><path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#3de88c"/><path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#3de88c"/><circle cx="48" cy="48" r="7" fill="#3de88c"/><circle cx="48" cy="48" r="4" fill="#1a3325"/></svg></div>
+          <div class="usage-label" style="margin-top:4px;">verde escuro</div>
+        </div>
+        <div>
+          <div class="usage-bg" style="background:#e8f7ef; border: 0.5px solid rgba(0,0,0,0.08); border-radius:10px;"><svg width="22" height="22" viewBox="0 0 96 96" fill="none"><path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#0f1a14"/><path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#0f1a14"/><circle cx="48" cy="48" r="7" fill="#0f1a14"/><circle cx="48" cy="48" r="4" fill="#e8f7ef"/></svg></div>
+          <div class="usage-label" style="margin-top:4px;">verde fundo</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+  <span class="blabel">Tipografia</span>
+
+  <div style="display: flex; gap: 32px; align-items: flex-end; flex-wrap: wrap;">
+    <div>
+      <div style="font-family:'Syne',sans-serif; font-size:32px; font-weight:800; color:var(--color-text-primary); line-height:1;">EcoColeta</div>
+      <div style="font-size:11px; color:var(--color-text-tertiary); margin-top:6px;">Syne 800 — headings e nome da marca</div>
+    </div>
+    <div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:20px; font-weight:400; color:var(--color-text-primary); line-height:1;">Conectando quem coleta</div>
+      <div style="font-size:11px; color:var(--color-text-tertiary); margin-top:6px;">DM Sans 400 — corpo e interface</div>
+    </div>
+    <div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:500; color:var(--color-text-secondary); line-height:1;">Cadastrar agora →</div>
+      <div style="font-size:11px; color:var(--color-text-tertiary); margin-top:6px;">DM Sans 500 — CTAs e labels</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <span class="blabel">Favicon (aba do browser)</span>
+  <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <div style="background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 10px; padding: 16px 20px; display: flex; align-items: center; gap: 12px;">
+      <svg width="16" height="16" viewBox="0 0 96 96" fill="none"><rect width="96" height="96" rx="22" fill="#2db06a"/><path d="M34 48 C34 40.27 40.27 34 48 34 C52.5 34 56.5 36.1 59.1 39.4 L55 39.4 L55 43.4 L65 43.4 L65 33.4 L61 33.4 L61 37 C57.5 33.3 52.5 31 48 31 C38.6 31 31 38.6 31 48 Z" fill="#0f1a14"/><path d="M62 48 C62 55.73 55.73 62 48 62 C43.5 62 39.5 59.9 36.9 56.6 L41 56.6 L41 52.6 L31 52.6 L31 62.6 L35 62.6 L35 59 C38.5 62.7 43.5 65 48 65 C57.4 65 65 57.4 65 48 Z" fill="#0f1a14"/><circle cx="48" cy="48" r="7" fill="#0f1a14"/><circle cx="48" cy="48" r="4" fill="#2db06a"/></svg>
+      <span style="font-size: 12px; color: var(--color-text-secondary);">EcoColeta — Conectando quem coleta...</span>
+      <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-border-secondary); margin-left: 4px;"></div>
+    </div>
+    <div style="font-size: 11px; color: var(--color-text-tertiary); max-width: 240px; line-height: 1.6;">Variante A (verde claro) usada como favicon SVG inline. Legível em 16×16px tanto em fundo claro quanto escuro.</div>
+  </div>
+
+</div>
